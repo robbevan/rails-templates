@@ -11,7 +11,7 @@ migration = "login:string email:string crypted_password:string password_salt:str
 
 generate 'model', 'user', migration
 
-log 'NOTE', "Don't forget to run 'rake db:migrate'."
+log 'note', "Don't forget to run 'rake db:migrate' or apply database app template"
 
 # set up User model
 file 'app/models/user.rb',

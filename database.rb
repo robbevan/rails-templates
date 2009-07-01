@@ -20,4 +20,5 @@ staging:
 production:
   development}.gsub('APP_NAME', @app_name)
   
-rake('db:create:all')
+rake 'db:create:all'
+rake 'db:migrate'
