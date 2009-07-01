@@ -25,3 +25,6 @@ public/attachments
  
 # copy sample database config
 run "cp config/database.yml config/database.yml.sample"
+
+# copy production environment to staging
+run "cp config/environments/production.rb config/environments/staging.rb"
