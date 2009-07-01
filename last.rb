@@ -1,19 +1,20 @@
-def stylesheets(blueprint)
-  stylesheets = %q{def stylesheets(namespace=nil)}
-  if blueprint
+def stylesheets
+  stylesheets = 'def stylesheets(namespace=nil)'
+  if File.exists?('public/stylesheets/blueprint')
     stylesheets << "\n    " + %q{styles = stylesheet_link_tag('blueprint/screen.css', :media => 'screen, projection') + "\n"
     styles << stylesheet_link_tag('blueprint/print.css', :media => 'print') + "\n"
     styles << "<!--[if IE]>\n"
     styles << "  " + stylesheet_link_tag('blueprint/ie.css', :media => 'screen, projection') + "\n"
     styles << "<![endif]-->\n"}
   end
+  if File.exists?('public/stylesheets/application.css')
   stylesheets << "\n    " + %q{styles << "\n#{stylesheet_link_tag((namespace ? "#{namespace.to_s}/" : "") + 'application')}\n"
     styles << "<!--[if IE]>\n"
     styles << "  " + stylesheet_link_tag('ie.css', :media => 'screen, projection') + "\n"
     styles << "<![endif]-->\n"
-    styles
-  end}
-  stylesheets
+    styles}
+  end
+  stylesheets + "\n  " + 'end'
 end
 
 # ApplicationHelper
@@ -26,7 +27,7 @@ file 'app/helpers/application_helper.rb',
     page_title
   end
   
-  } + stylesheets(true) + %q{
+  } + stylesheets + %q{
 
   def controller_javascript_include_tag
     controller_js = File.join(RAILS_ROOT, 'public', 'javascripts', "#{controller.controller_name}.js")
