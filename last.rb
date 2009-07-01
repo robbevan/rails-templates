@@ -34,7 +34,7 @@ file 'app/helpers/application_helper.rb',
     javascript_include_tag controller.controller_name if File.exists?(controller_js)
   end
   
-  def body_class
+  def content_class
     "#{controller.controller_name} #{controller.controller_name}-#{controller.action_name}"
   end
 
