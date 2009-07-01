@@ -1,7 +1,3 @@
-def app_name
-  @root.split('/').last
-end
-
 def stylesheets
   stylesheets = 'def stylesheets(namespace=nil)'
   if File.exists?('public/stylesheets/blueprint')
@@ -31,7 +27,7 @@ file 'app/helpers/application_helper.rb',
     page_title
   end
   
-  } + stylesheets + %q{
+  }.gsub('APP_NAME', @app_name.capitalize) + stylesheets + %q{
 
   def controller_javascript_include_tag
     controller_js = File.join(RAILS_ROOT, 'public', 'javascripts', "#{controller.controller_name}.js")
@@ -50,7 +46,7 @@ file 'app/helpers/application_helper.rb',
     controller.action_name == 'new' ? "Create" : "Update"
   end
 end
-}.gsub('APP_NAME', app_name)
+}
 
 # ApplicationController
 file 'app/controllers/application_controller.rb',

@@ -1,7 +1,3 @@
-def app_name
-  @root.split('/').last
-end
-
 # create local development database.yml
 file 'config/database.yml',
 %q{development:
@@ -22,6 +18,6 @@ staging:
   development
 
 production:
-  development}.gsub('APP_NAME', app_name)
+  development}.gsub('APP_NAME', @app_name)
   
 rake('db:create:all')

@@ -13,6 +13,8 @@ else
   ask "Please enter the full path or URL where the templates are located:"
 end
 
+@app_name = @root.split('/').last
+
 # init git repo
 git :init
  
