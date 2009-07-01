@@ -8,6 +8,3 @@ $(function() {
   // ...
 });
 JS
-
-git :add => "."
-git :commit => "-a -m 'Added jQuery'"
