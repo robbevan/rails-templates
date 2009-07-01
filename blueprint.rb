@@ -1,1 +1,1 @@
-run "wget http://github.com/joshuaclayton/blueprint-css/tarball/master; tar xvf *blueprint*; cp -r *blueprint*/blueprint/* public/stylesheets; rm -rf *blueprint*"
+run "wget http://github.com/joshuaclayton/blueprint-css/tarball/master; tar xvf *blueprint*; mkdir public/stylesheets/blueprint; cp -r *blueprint*/blueprint/* public/stylesheets/blueprint/; rm -rf *blueprint*"
