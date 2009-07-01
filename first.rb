@@ -4,9 +4,6 @@ run "rmdir tmp/{ pids, sessions, sockets, cache }"
 # remove unnecessary stuff
 run "rm README log/*.log public/index.html public/images/rails.png"
  
-# keep empty dirs
-run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
- 
 # basic .gitignore file
 file '.gitignore', 
 %q{log/*.log
@@ -15,6 +12,7 @@ db/*.db
 db/*.sqlite3
 tmp/**/*
 .DS_Store
+*.tmproj
 doc/api
 doc/app
 config/database.yml
