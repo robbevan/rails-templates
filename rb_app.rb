@@ -1,7 +1,8 @@
 optional_templates = [
   ["blueprint",  "Apply Blueprint?"],
   ["stylesheets",  "Apply stylesheets?"],
-  ["jquery",  "Apply jQuery?"]
+  ["jquery",  "Apply jQuery?"],
+  ["authlogic",  "Apply Authlogic?"]
 ]
 
 @base_path = if template =~ %r{^(/|\w+://)}
