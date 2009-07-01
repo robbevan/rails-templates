@@ -1,3 +1,7 @@
+def app_name
+  @root.split('/').last
+end
+
 def stylesheets
   stylesheets = 'def stylesheets(namespace=nil)'
   if File.exists?('public/stylesheets/blueprint')
@@ -46,7 +50,7 @@ file 'app/helpers/application_helper.rb',
     controller.action_name == 'new' ? "Create" : "Update"
   end
 end
-}
+}.gsub('APP_NAME', app_name)
 
 # ApplicationController
 file 'app/controllers/application_controller.rb',
