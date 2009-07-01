@@ -2,6 +2,7 @@ optional_templates = [
   ["blueprint",  "Apply Blueprint?"],
   ["stylesheets",  "Apply stylesheets?"],
   ["jquery",  "Apply jQuery?"],
+  ["database",  "Apply database?"],
   ["authlogic",  "Apply Authlogic?"]
 ]
 
