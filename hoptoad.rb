@@ -6,5 +6,5 @@ file 'config/initializers/hoptoad.rb',
 end}
 
 open('README.md', 'a') { |f|
-  f.puts "Replace 'API_KEY' in config/initializers/hoptoad.rb and run 'rake hoptoad:test'"
+  f.puts "Replace 'API_KEY' in 'config/initializers/hoptoad.rb' and run 'rake hoptoad:test'"
 }
