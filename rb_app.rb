@@ -10,6 +10,7 @@ optional_templates = [
   ["scout",  "Install Scout's Rails Instrumentation plugin?"],
   ["rails",  "Add Rails as submodule?"],
   ["database",  "Create database?"],
+  ["capistrano",  "Capify?"],
   ["vhost",  "Create vhost configuration?"],
   ["smf",  "Create SMF XML manifest?"]
 ]
