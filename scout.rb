@@ -1,5 +1,7 @@
+# install plugin
 plugin 'scout_rails_instrumentation', :git => "git://github.com/highgroove/scout_rails_instrumentation.git", :submodule => true
 
+# create scout.yml
 file 'config/scout.yml',
 %q{# This is where set your Rails Instrumentation plugin id, so the instrumentation plugin 
 # can identify itself to the Scout agent.
@@ -29,6 +31,7 @@ development: # <-- typically you'll leave this blank
 #  server1.com: # <- plugin id for first developer's box
 #  server2.com: # <- plugin id for second developer's box}
 
+# append TODO
 open('README.md', 'a') { |f|
   f.puts "Add Rails Instrumentation plugin id to 'config/scout.yml'"
 }
