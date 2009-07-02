@@ -1,3 +1,4 @@
+# create vhost
 file "config/deploy/#{@app_name}.tld.conf",
 %q{<VirtualHost *:80>
 ServerName APP_NAME.tld
@@ -26,5 +27,5 @@ ProxyPreserveHost On
 
 # append TODO
 open('README.md', 'a') { |f|
-  f.puts "Update .tld and paths etc. in 'config/deploy/#{@app_name}.tld' file name and contents"
+  f.puts "Update .tld and paths etc. in 'config/deploy/#{@app_name}.tld' (file name and contents)"
 }
