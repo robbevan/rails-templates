@@ -3,6 +3,7 @@ optional_templates = [
   ["stylesheets",  "Create default stylesheets?"],
   ["jquery",  "Replace Javascript defaults with jQuery?"],
   ["layouts",  "Create default layouts?"],
+  ["gems",  "Install default gems?"],
   ["authlogic",  "Add Authlogic-based authentication?"],
   ["hoptoad",  "Install HoptoadNotifier plugin?"],
   ["scout",  "Install Scout's Rails Instrumentation plugin?"],
