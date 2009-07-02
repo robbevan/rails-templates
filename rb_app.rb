@@ -5,6 +5,7 @@ optional_templates = [
   ["layouts",  "Create default layouts?"],
   ["authlogic",  "Add Authlogic-based authentication?"],
   ["hoptoad",  "Install HoptoadNotifier plugin?"],
+  ["scout",  "Install Scout's Rails Instrumentation plugin?"],
   ["database",  "Create database?"]
 ]
 
