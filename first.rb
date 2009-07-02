@@ -16,6 +16,7 @@ tmp/**/*
 doc/api
 doc/app
 config/database.yml
+config/passwords.yml
 autotest_result.html
 coverage
 public/javascripts/*_[0-9]*.js
@@ -49,19 +50,51 @@ class Object #:nodoc:
 end
 }
 
+# create requires initializer
+file 'config/initializers/requires.rb', ''
+
+# create smtp initializer
 file 'config/initializers/smtp.rb',
-%q{config.action_mailer.smtp_settings = {
+%q{f = "config/passwords.yml"
+abort "Couldn't find #{f}" unless File.exists?(f)
+passwords = YAML::load(File.open(f))
+
+config.action_mailer.smtp_settings = {
   :address => # ADDRESS,
   :port => 25,
   :domain => # DOMAIN,
   :authentication => :login,
-  :user_name => # USERNAME,
-  :password => # PASSWORD
+  :user_name => passwords['smtp']['user'],
+  :password => passwords['smtp']['password']
 }}
 
+# append TODO
 open('README.md', 'a') { |f|
-  f.puts "Add credentials (username, password etc.) to 'config/initializers/smtp.rb'"
+  f.puts "Add SMTP address and domain to 'config/initializers/smtp.rb'"
 }
 
-# create requires initializer
-file 'config/initializers/requires.rb', ''
+# create passwords.example.yml
+file 'config/passwords.example.yml',
+%q{scm:
+  user: USER
+  password: PASSWORD
+
+smtp:
+  user: USER
+  password: PASSWORD
+  
+staging:
+  user: USER
+  password: PASSWORD
+  
+production:
+  user: USER
+  password: PASSWORD}
+  
+# copy passwords.example.yml to passwords.yml (ignored)
+run "cp config/passwords.example.yml config/passwords.yml"
+
+# append TODO
+open('README.md', 'a') { |f|
+  f.puts "Add users and passwords to 'config/passwords.yml'"
+}
