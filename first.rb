@@ -2,7 +2,7 @@
 run "rmdir tmp/{ pids, sessions, sockets, cache }"
  
 # remove unnecessary stuff
-run "log/*.log public/favicon.ico public/index.html public/images/rails.png public/robots.txt"
+run "rm README log/*.log public/favicon.ico public/index.html public/images/rails.png public/robots.txt"
  
 # basic .gitignore file
 file '.gitignore', 
@@ -29,7 +29,5 @@ run "cp config/database.yml config/database.yml.sample"
 # copy production environment to staging
 run "cp config/environments/production.rb config/environments/staging.rb"
 
-# rename README
-run "mv README README.md"
-
+# rename README.md
 file 'README.md', "TODO"
