@@ -31,3 +31,6 @@ run "cp config/environments/production.rb config/environments/staging.rb"
 
 # rename README.md
 file 'README.md', "TODO\n\n"
+
+# create requires initializer
+file 'config/initializers/requires.rb', ''
