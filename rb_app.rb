@@ -8,6 +8,7 @@ optional_templates = [
   ["authlogic",  "Add Authlogic-based authentication?"],
   ["hoptoad",  "Install HoptoadNotifier plugin?"],
   ["scout",  "Install Scout's Rails Instrumentation plugin?"],
+  ["rails",  "Add Rails as submodule?"],
   ["database",  "Create database?"],
   ["vhost",  "Create vhost configuration?"],
   ["smf",  "Create SMF XML manifest?"]
