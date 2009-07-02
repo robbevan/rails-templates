@@ -59,10 +59,10 @@ file 'config/initializers/smtp.rb',
 abort "Couldn't find #{f}" unless File.exists?(f)
 passwords = YAML::load(File.open(f))
 
-config.action_mailer.smtp_settings = {
-  :address => # ADDRESS,
+ActionMailer::Base.smtp_settings = {
+  :address => 'ADDRESS',
   :port => 25,
-  :domain => # DOMAIN,
+  :domain => 'DOMAIN',
   :authentication => :login,
   :user_name => passwords['smtp']['user'],
   :password => passwords['smtp']['password']
