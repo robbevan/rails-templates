@@ -8,7 +8,8 @@ optional_templates = [
   ["authlogic",  "Add Authlogic-based authentication?"],
   ["hoptoad",  "Install HoptoadNotifier plugin?"],
   ["scout",  "Install Scout's Rails Instrumentation plugin?"],
-  ["database",  "Create database?"]
+  ["database",  "Create database?"],
+  ["vhost",  "Create vhost?"]
 ]
 
 @base_path = if template =~ %r{^(/|\w+://)}
