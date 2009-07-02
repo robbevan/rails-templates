@@ -48,11 +48,8 @@ file 'app/helpers/application_helper.rb',
 end
 }
 
-# ApplicationController
-file 'app/controllers/application_controller.rb',
-%q{class ApplicationController < ActionController::Base
-  filter_parameter_logging :password, :password_confirmation
-  helper_method :current_user_session, :current_user
+if File.exists?('app/models/user_session.rb')
+  authlogic_application_controller = %q{helper_method :current_user_session, :current_user
 
   private
     def current_user_session
@@ -63,8 +60,15 @@ file 'app/controllers/application_controller.rb',
     def current_user
       return @current_user if defined?(@current_user)
       @current_user = current_user_session && current_user_session.user
-    end
-end} if File.exists?('app/models/user_session.rb')
+    end}
+
+  f = 'app/controllers/application_controller.rb'
+  application_controller = IO.read f
+  application_controller.gsub!('# filter_parameter_logging :password', authlogic_application_controller)
+  File.open(f, 'w') do |ac|
+    ac.write(application_controller)
+  end
+end
 
 # keep empty dirs
 run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
