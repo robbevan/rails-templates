@@ -1,0 +1,103 @@
+body {
+}
+
+.container {
+}
+
+/* == HEADER == */
+
+#header {
+}
+
+/* == CONTENT == */
+
+#content {
+}
+
+/* == FLASH == */
+
+div.flash {
+  font-size: 0.85em;
+  padding: 4px;
+  text-align: center;
+}
+
+div.error {
+  background-color: #dfc6c6;
+  border-top: 3px solid #de6f6f;
+  border-bottom: 3px solid #de6f6f;
+}
+
+div.notice {
+  background-color: #c6dfcd;
+  border-top: 3px solid #6fde8e;
+  border-bottom: 3px solid #6fde8e;
+}
+
+/* == NAVIGATION == */
+
+#navigation {
+}
+
+#navigation ul {
+}
+
+#navigation li {
+}
+
+#navigation li a {
+}
+
+#navigation li a:hover {
+}
+
+#navigation li a.current {
+}
+
+/* == FOOTER == */
+
+#footer {
+}
+
+#footer ul {
+}
+
+#footer li {
+}
+
+/* == PAGINATION == */
+
+.pagination {
+  margin: 3px;
+  padding: 3px;
+  text-align: right;
+}
+
+.pagination a {
+  border: 1px solid #aaaadd;
+  color: #000099;
+  margin: 2px;
+  padding: 2px 5px 2px 5px;
+  text-decoration: none;
+}
+
+.pagination a:hover, .pagination a:active {
+  border: 1px solid #000099;
+  color: #000;
+}
+
+.pagination span.current {
+  background-color: #000099;
+  border: 1px solid #000099;
+  color: #FFF;
+  font-weight: bold;
+  margin: 2px;
+  padding: 2px 5px 2px 5px;
+}
+
+.pagination span.disabled {
+  border: 1px solid #eee;
+  color: #ddd;
+  margin: 2px;
+  padding: 2px 5px 2px 5px;
+}
