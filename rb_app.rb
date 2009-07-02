@@ -1,10 +1,10 @@
 optional_templates = [
-  ["blueprint",  "Add Blueprint?"],
+  ["blueprint",  "Add Blueprint CSS framework?"],
   ["stylesheets",  "Create default stylesheets?"],
-  ["jquery",  "Add jQuery?"],
+  ["jquery",  "Replace Javascript defaults with jQuery?"],
   ["layouts",  "Create default layouts?"],
-  ["authlogic",  "Add Authlogic?"],
-  ["hoptoad",  "Install HoptoadNotifier?"],
+  ["authlogic",  "Add Authlogic-based authentication?"],
+  ["hoptoad",  "Install HoptoadNotifier plugin?"],
   ["database",  "Create database?"]
 ]
 
