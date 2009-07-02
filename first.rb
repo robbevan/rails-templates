@@ -32,5 +32,36 @@ run "cp config/environments/production.rb config/environments/staging.rb"
 # rename README.md
 file 'README.md', "TODO\n\n"
 
+# create application initializer
+file 'config/initializers/application.rb',
+%q{class Hash #:nodoc:
+  def method_missing(key, *args)
+    return nil if !self[key] && !self[key.to_s]
+    self[key] || self[key.to_s]
+  end
+end
+
+class Object #:nodoc:
+  # @person.try(:name)
+  def try(method)
+    send method if respond_to? method
+  end
+end
+}
+
+file 'config/initializers/smtp.rb',
+%q{config.action_mailer.smtp_settings = {
+  :address => # ADDRESS,
+  :port => 25,
+  :domain => # DOMAIN,
+  :authentication => :login,
+  :user_name => # USERNAME,
+  :password => # PASSWORD
+}}
+
+open('README.md', 'a') { |f|
+  f.puts "Add credentials (username, password etc.) to 'config/initializers/smtp.rb'"
+}
+
 # create requires initializer
 file 'config/initializers/requires.rb', ''
