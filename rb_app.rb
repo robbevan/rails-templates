@@ -4,6 +4,7 @@ optional_templates = [
   ["jquery",  "Add jQuery?"],
   ["layouts",  "Create default layouts?"],
   ["authlogic",  "Add Authlogic?"],
+  ["hoptoad",  "Install HoptoadNotifier?"],
   ["database",  "Create database?"]
 ]
 

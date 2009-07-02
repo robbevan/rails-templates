@@ -30,4 +30,4 @@ run "cp config/database.yml config/database.yml.sample"
 run "cp config/environments/production.rb config/environments/staging.rb"
 
 # rename README.md
-file 'README.md', "TODO"
+file 'README.md', "TODO\n\n"
